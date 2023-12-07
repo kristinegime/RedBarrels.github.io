@@ -1,0 +1,797 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Import Google Icon font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <!-- Compiled and minifies CSS-->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <style>
+    header {
+        background: url(img2/video.mp4.mp4);
+        background-size: cover;
+        background-position: center;
+        min-height: 1000px;
+       font-family: 'Outlast';
+
+    }
+
+    @media screen and (max-width:1000px){
+        header{
+            min-height: 1000px;
+            
+        }
+        .logo-container {
+            margin-right:0px
+        }
+        .logo-container img {
+            margin-left: 80px;
+        }
+    }
+    
+      
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000; 
+    }
+      
+    #video-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(50%) sepia(20%) grayscale(10%); 
+      transition:filter 0.5s ease;
+      }
+
+        
+    .tabs .indicator {
+        background-color: rgb(245, 14, 14);
+      }
+      .tabs .tab a:focus, .tabs .tab a:focus.active {
+        background: transparent;
+      } 
+
+      .vertical-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        }
+
+      .box-item {
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #ca2323;
+        transition: transform 0.3s ease-in-out;
+        }       
+
+       .box-item:hover {
+        transform: scale(1.05);
+        }
+
+    .box-image {
+        width: 100%;
+        height: auto;
+        display: block;
+     transition: transform 0.3s ease-in-out;
+}
+
+.box-item:hover .box-image {
+    transform: scale(1.1);
+}
+
+    .box-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .box-item:hover .box-overlay {
+        opacity: 1;
+    }
+
+    body {
+    background-image: url(img2/marta.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Cinzel';
+    }
+    .image-border {
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .image-border:hover {
+        border-color: red;
+    }
+
+    
+    .paragraph-border {
+        border: 2px solid rgb(15, 14, 14);
+        padding: 10px;
+        transition: border-color 0.3s ease-in-out;
+        font-size: 20px; 
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+
+    }
+
+
+    .paragraph-border:hover {
+        border-color: rgb(223, 27, 27);
+    }
+
+    .paragraph-border::selection {
+        color: red; 
+    }
+    h2::selection {
+        color: black; 
+        background-color: red; 
+        border: 1px solid red; 
+    }
+
+    img::selection {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(280deg);
+    }
+
+    p::selection{
+        color: red;
+    }
+    .card-title::selection {
+        color: red;
+    }
+   .header {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+}
+
+
+
+.social-icons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: red;
+}
+
+.footer-copyright {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.footer-copyright:hover {
+    background-color: #333;
+    color: #e91515; 
+}
+.glow {
+            animation: glowing 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+            from {
+                text-shadow: 0 0 10px #eddfdf, 0 0 20px #eee8e8, 0 0 30px #f6ecec;
+            }
+            to {
+                text-shadow: 0 0 20px #f4efef, 0 0 30px #f5f1f1, 0 0 40px #f3eeee;
+            }
+}
+
+.glow2 {
+            animation: glowing 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowing {
+            from {
+                text-shadow: 0 0 10px #fb0e0e, 0 0 20px #f60b0b, 0 0 30px #ef0b0b;
+            }
+            to {
+                text-shadow: 0 0 20px #ec0808, 0 0 30px #ee1010, 0 0 40px #f00f0f;
+            }
+            }
+#waves-effect, .waves-light {
+  background-color: transparent; 
+
+}
+
+.waves-effect.btn:hover, .waves-light.btn:hover {
+  background-color: #f30606;
+
+
+  }
+
+  .page-footer {
+    background-image: url(img2/cross.jpg);
+    background-position: center;
+  
+}
+
+.btn-custom {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow:none;
+    font-size: 15px;
+    font-family:'Cinzel';
+    border-radius: 0%;
+}
+
+  .btn-custom:hover {
+  color: #f0094a;
+  background: transparent;
+   box-shadow:none;
+
+  }
+
+  
+  .btn-custom:before,
+  .btn-custom:after {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #f0094a;
+    transition:400ms ease all;
+  }
+
+  .btn-custom:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+
+  .btn-custom:hover:before,
+  .btn-custom:hover:after {
+    width:100%;
+    transition:800ms ease all;
+  }
+  
+  .brand-logo {
+      margin-left: 70px;
+    }
+    
+    .logo-img {
+      width: 60px; 
+      height: auto;
+    }
+</style>
+    <title>Red Barrels</title>
+</head>
+<body>
+
+
+        <!-- navbar-->
+        <header>
+            <nav class="nav-wrapper transparent glow">
+                <div class="container">
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#home" class="btn-custom glow">Home</a></li>
+                        <li><a href="#gallery" class="btn-custom glow">Gallery</a></li>
+                        <li><a href="#characters" class="btn-custom glow">Characters</a></li>
+                        <li><a href="#gameplay" class="btn-custom glow">Gameplay</a></li>
+                      </ul>
+                      <ul class="sidenav black darken-4" id="mobile-menu">
+                        <li><a href="#home" class="btn-custom white-text text-darken-4 glow">Home</a></li>
+                        <li><a href="#" class="btn-custom white-text text-darken-4 glow">Gallery</a></li>
+                        <li><a href="#characters" class="btn-custom white-text text-darken-4 glow">Characters</a></li>
+                        <li><a href="#gameplay" class="btn-custom white-text text-darken-4 glow">Gameplay</a></li>
+                    </ul>
+                    <div class="logo-container">
+                        <a href="#" class="brand-logo glow">Red Barrels</a>
+                        <img src="img2/logo.png" alt="" class="logo-img">
+                      <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                        <i class="material-icons">menu</i>
+                    </a>
+                      </div>
+                </div>
+            </nav>
+            <video autoplay loop muted id="video-background">
+              <source src="img2/video.mp4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        </div>
+</header>
+        
+
+            <!--Home------------------------------------------------------------------------------------------------------------------------>
+            <section class="container section scrollspy" id="home">
+                <div class="row">
+                    <div class="col s12 l">
+                        <img src="img2/environement2.jpg" alt="" class="responsive-img materialboxed image-border">
+                    </div>
+                    <div class="col s12 l  pull-l1 offset-l1 left-align">
+                        <h2 class="white-text text-darken-4 glow">Outlast</h2>
+                        <p class="paragraph-border white-text text-darken-4">Outlast is a 2013 first-person survival horror video game developed and published by Red Barrels. The game revolves around a freelance investigative journalist, Miles Upshur, who decides to investigate a remote psychiatric hospital named Mount Massive Asylum, located deep in the mountains of Lake County, Colorado. The downloadable content Outlast: Whistleblower centers on Waylon Park, the man who led Miles there in the first place.</p>
+                        <p class="paragraph-border white-text text-darken-4">Outlast was released for Microsoft Windows on September 4, 2013, PlayStation 4 on February 4, 2014, and for Xbox One on June 19, 2014. Linux and OS X versions were later released on March 31, 2015. A Nintendo Switch version titled Outlast: Bundle of Terror was released in February 2018.
+                        Outlast received generally positive reviews, with praise for its atmosphere, horror elements, and gameplay. As of October 2016, the game has sold 4 million copies.As of May 2018, the whole series has sold 15 million copies. 
+                        A sequel, Outlast 2, was released on April 25, 2017, while a prequel, The Outlast Trials, was released on May 18, 2023. The Murkoff Account, a comic book series set between Outlast and Outlast 2, was released from July 2016 to November 2017.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 l ">
+                        <img src="img2/environment1.jpg" alt="" class="responsive-img materialboxed image-border">
+                    </div>
+                    <div class="col s12 l pull-l1 offset-l1 left-align">
+                        <h2 class="white-text text-darken-4 glow">Sneak-Peek</h2>
+                        <p class="paragraph-border white-text text-darken-4">In Outlast, the player assumes the role of investigative journalist Miles Upshur, as he navigates a dilapidated psychiatric hospital in Leadville, Colorado that is overrun by homicidal patients. 
+                            The game is played from a first-person perspective and features some stealth gameplay mechanics.
+                            <p class="paragraph-border white-text text-darken-4">The player can walk, run, crouch, jump, climb ladders and vault over objects. Unlike most games, however, the player does not have a visible health bar on the screen and is unable to attack enemies. The player must instead rely on stealth tactics such as hiding in lockers, sneaking past enemies, staying in the shadows, and hiding behind or under things to survive. Alternatively, the player can attempt to outrun their pursuer. If the player dies, the game will reset to the most recent checkpoint.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 l">
+                        <img src="img2/environment3.jpg" alt="" class="responsive-img materialboxed image-border">
+                    </div>
+                    <div class="col s12 l pull-l1 offset-l1 left-align">
+                        <h2  class="white-text text-darken-4 glow">Graphics</h2>
+                        <p class="paragraph-border white-text text-darken-4">Outlast will require Radeon HD 6850 graphics card with a Core i5-760 2.8GHz or Phenom II X4 B50 processor to reach the recommended specs, achieving high graphics setting on 1080p. 3 GB will also be needed to achieve the Outlast rec specs and get 60FPS.</p>
+                    </div>
+           </section>
+          
+          <!----------HOME2-------------------------------------------------------------------------------------------------------------------->
+
+
+          <div class="parallax-container">
+            <div class="parallax">
+          <img src="img2/environment4.jpg" alt="" class="responsive-img ">
+      </div>
+    </div>
+
+          <section class="container section scrollspy" id="home2">
+            <div class="row">
+                <div class="col s12 l">
+                    <img src="img2/environment5.jpg" alt="" class="responsive-img materialboxed image-border">
+                </div>
+                <div class="col s12 l  pull-l1 offset-l1 left-align">
+                    <h2 class="white-text text-darken-4 glow ">Outlast II</h2>
+                    <p class="paragraph-border white-text text-darken-4">Outlast 2 is a 2017 first-person psychological survival horror video game developed and published by Red Barrels. A sequel to the 2013 video game Outlast, the game features a cameraman named Blake Langermann, along with his wife Lynn, a journalist roaming the Arizona desert to explore the murder of a pregnant woman only known as Jane Doe.</p>
+                    <p class="paragraph-border white-text text-darken-4">Both get separated in a helicopter crash, and Blake has to find his wife while traveling through a village inhabited by a deranged sect that believes the end of days are upon them. </p>
+                    <p class="paragraph-border white-text text-darken-4">The game was met with generally positive reception upon release, with praise going towards the graphics, sound design, and atmosphere. Criticisms were reserved for the amount of gore, and difficulty. A third installment in the series, entitled The Outlast Trials, was released on May 18, 2023.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 l ">
+                    <img src="img2/environment7.jpeg" alt="" class="responsive-img materialboxed image-border">
+                </div>
+                <div class="col s12 l pull-l1 offset-l1 left-align">
+                    <h2 class="white-text text-darken-4 glow">Sneak-Peek</h2>
+                    <p class="paragraph-border white-text text-darken-4">The game is designed to immerse players in a dark and disturbing atmosphere. The environments are eerie, with unsettling sounds and visuals that contribute to a feeling of constant tension and fear.</p>
+                    <p class="paragraph-border white-text text-darken-4">As players uncover the story, they encounter a twisted and mysterious plot involving a cult and dark supernatural forces. Themes of religion, violence, and psychological horror are prevalent throughout the narrative. </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 l">
+                    <img src="img2/environment8.jpeg" alt="" class="responsive-img materialboxed image-border">
+                </div>
+                <div class="col s12 l pull-l1 offset-l1 left-align">
+                    <h2 class="white-text text-darken-4 glow">Graphics</h2>
+                    <p class="paragraph-border white-text text-darken-4">The graphics in "Outlast 2" are highly detailed and realistic, immersing players in a world that feels grim, gritty, and disturbingly authentic. The environments, character models, and various elements are crafted to evoke a sense of unease and horror.</p>
+                </div>
+            </section>
+
+            <!--home3--------------------------------------------------------------------------------------------------------------------->
+
+            <div class="parallax-container" id="home3">
+              <div class="parallax">
+            <img src="img2/environment6.jpg" alt="" class="responsive-img">
+        </div>
+      </div>
+  
+            <section class="container section scrollspy">
+              <div class="row">
+                  <div class="col s12 l">
+                      <img src="img2/environment9.jpg" alt="" class="responsive-img materialboxed image-border">
+                  </div>
+                  <div class="col s12 l  pull-l1 offset-l1 left-align">
+                      <h2 class="white-text text-darken-4 glow">Outlast : Whistleblower</h2>
+                      <p class="paragraph-border white-text text-darken-4">"Outlast: Whistleblower" is a DLC (Downloadable Content) expansion for the original "Outlast" game. It serves as a prequel and runs parallel to the events of the main game, providing players with additional context and insight into the sinister world of the Mount Massive Asylum.
+                        <p class="paragraph-border white-text text-darken-4">The DLC puts players in the shoes of Waylon Park, a software engineer working at Mount Massive Asylum, the same setting as the main game. Waylon becomes aware of the unethical and inhumane experiments conducted at the asylum by the Murkoff Corporation. Fearing for his life and seeking to expose the truth, Waylon decides to leak information to the outside world, thus becoming a whistleblower.</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 l ">
+                      <img src="img2/environment12.jpg" alt="" class="responsive-img materialboxed image-border">
+                  </div>
+                  <div class="col s12 l pull-l1 offset-l1 left-align">
+                      <h2  class="white-text text-darken-4 glow">Sneak-Peek</h2>
+                      <p class="paragraph-border white-text text-darken-4">The DLC delves deeper into the events that occurred before and during the outbreak at Mount Massive Asylum. Players experience Waylon's journey as he attempts to escape the horrors unfolding within the facility while facing various dangers and threats.</p>
+                      <p class="paragraph-border white-text text-darken-4">"Whistleblower" sheds light on the dark secrets of the asylum and the insidious experiments conducted by the Murkoff Corporation, providing context to the events players encountered in the main game.</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 l">
+                      <img src="img2/environment11.jpg" alt="" class="responsive-img materialboxed image-border">
+                  </div>
+                  <div class="col s12 l pull-l1 offset-l1 left-align">
+                      <h2 class="white-text text-darken-4 glow">Graphics</h2>
+                      <p class="paragraph-border white-text text-darken-4"> The character models in the DLC are meticulously crafted, featuring grotesque enemies, disturbed inmates, and eerie figures. The design of these characters adds to the sense of fear and tension, making encounters with them more intense.</p>
+                  </div>
+              </section>
+
+
+              <!-- parallax2-->
+
+        <div class="parallax-container">
+          <div class="parallax">
+      <img src="img2/environment10.jpg" alt="" class="responsive-img">
+  </div>
+</div>
+
+       <!--GGGGGGGGGGGGGGGGGGGGGAAAALLLLLLLLLLLLLLLLLEEEEEEEEEEEEEEEEERYYYYYYYYYYYYYYYY-->     
+
+       <section class="container section scrollspy" id="gallery">
+        <div class="row">
+            <div class="col s12 l">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img2/gallery 1.webp" alt="" class="materialboxed responsive-img">
+                        <span class="card-title white-text text-darken-4 glow">"Down the drain"</span>
+                    </div>
+                    <div class="card-content black">
+                        <p class="paragraph-border white-text text-darken-4 ">In this level, Miles navigates through dark and claustrophobic corridors, encountering various hazards and unsettling sights. The drains and sewers beneath the asylum become a crucial part of the exploration, presenting challenges and dangers as Miles progresses deeper into the facility.
+                        </p>
+                    </div>
+                    <div class="card-action black">
+                        <a href="img2/gallery 1.webp" download class="btn waves-effect waves-light red right-align">download</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img2/gallery 2.webp" alt="" class="materialboxed responsive-img">
+                        <span class="card-title white-text text-darken-4 glow">"The Thing in the Dark"</span>
+                    </div>
+                    <div class="card-content black">
+                        <p class="paragraph-border white-text text-darken-4">"The Thing in the Dark" is a phrase often used in horror narratives to evoke a sense of fear and mystery surrounding an unknown entity or presence lurking in darkness or shadows.</p>
+                    </div>
+                    <div class="card-action black">
+                        <a href="img2/gallery 2.webp" download class="btn waves-effect waves-light red right-align">download</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img2/gallery 3.webp" alt="" class="materialboxed responsive-img">
+                        <span class="card-title white-tex text-darken-4 glow">"The Morphogenic Therapy"</span>
+                    </div>
+                    <div class="card-content black">
+                        <p class="paragraph-border white-text text-darken-4">The Morphogenic Engine is a research project involving experimental therapy aimed at altering human physiology and psychology through a combination of advanced technology and psychological manipulation. </p>
+                    </div>
+                    <div class="card-action black">
+                        <a href="img2/gallery 3.webp" download class="btn waves-effect waves-light red right-align">download</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img2/gallery 4.webp" alt="" class="materialboxed responsive-img">
+                        <span class="card-title white-text text-darken-4 glow">"Kneeling"</span>
+                    </div>
+                    <div class="card-content black">
+                        <p class="paragraph-border white-text text-darken-4">This image could evoke a sense of powerlessness, fear, or impending danger, as kneeling often symbolizes submission or supplication.</p>
+                    </div>
+                    <div class="card-action black">
+                        <a href="img2/gallery 4.webp" download class="btn waves-effect waves-light red right-align">download</a>
+                    </div>
+                 </div>
+            </div>
+                 <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image ">
+                            <img src="img2/gallery 5.webp" alt="" class="materialboxed responsive-img">
+                            <span class="card-title white-text text-darken-4 glow">"The Chained Villager"</span>
+                        </div>
+                        <div class="card-content black">
+                            <p class="paragraph-border white-text text-darken-4">Legend has it that in a secluded village nestled deep within the woods, there was once a humble villager known for his reclusive nature. He was said to have been haunted by something from his past, something dark and sinister.</p>
+                        </div>
+                        <div class="card-action black">
+                            <a href="img2/gallery 5.webp" download class="btn waves-effect waves-light red right-align">download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m5">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="img2/gallery 6.jpg" alt="" class="materialboxed responsive-img">
+                            <span class="card-title white-text text-darken-4 glow">"The Witch"</span>
+                        </div>
+                        <div class="card-content black">
+                            <p  class="paragraph-border white-text text-darken-4">In many stories, witches are depicted living on the outskirts of society, residing in secluded cottages deep within the woods or atop misty mountains.</p>
+                        </div>
+                        <div class="card-action black">
+                            <a href="img2/gallery 6.jpg" download class="btn waves-effect waves-light red right-align">download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image pull-l1 offset-l1 left-align">
+                            <img src="img2/gallery 7.jpg" class="materialboxed responsive-img">
+                            <span class="card-title white-text text-darken-4 glow">"The Unknown"</span>
+                        </div>
+                        <div class="card-content black">
+                            <p class="paragraph-border white-text text-darken-4">The unknown is a vast and boundless realm that encompasses everything beyond our understanding, experience, or perception. It's the uncharted territory of possibilities, mysteries, and questions that have yet to be answered. In a sense, it's the frontier of human curiosity and exploration, pushing us to seek knowledge and understanding.</p>
+                        </div>
+                        <div class="card-action black">
+                            <a href="img2/gallery 7.jpg" download class="btn waves-effect waves-light red right-align">download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m5 ">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="img2/gallery 8.jpg" alt="" class="materialboxed responsive-img">
+                            <span class="card-title white-text text-darken-4 glow">"The Devils Blood"</span>
+                        </div>
+                        <div class="card-content black">
+                            <p class="paragraph-border white-text text-darken-4"> mystical substance, possessing dark and potent properties. It's often associated with rituals, curses, or magical elements in tales of witchcraft or occult practices. The blood of a devil or demon might be portrayed as a powerful and dangerous substance capable of bestowing great power or causing harm.</p>
+                        </div>
+                        <div class="card-action black">
+                            <a href="img2/gallery 8.jpg" download class="btn waves-effect waves-light red right-align">download</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <div class="parallax-container">
+                <div class="parallax">
+              <img src="img2/parallax 1.jpg" alt="" class="responsive-img">
+          </div>
+        </div>
+            <!-------CHARACTERS--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+          <section class="container section scrollspy" id="characters">
+            <div class="vertical-box">
+                <div class="box-item">
+                    <img src="img2/chriswalker.jpg" alt="Image 1" class="box-image responsive-img">
+                    <div class="box-overlay">
+                        <h3 class="white-text text-darken-4 glow">Chris Walker</h3>
+                        <p>Walker is a large, muscular man donning a straithjacket and exhibiting extreme aggression and violence. He's a patient who has undergone experimental procedures, turning him into a relentless and savage being. His pursuit of the protagonist, Miles Upshur, throughout the game creates a sense of constant danger and tension.</p>
+                    </div>
+                </div>
+                <div class="box-item">
+                    <img src="img2/richardtrager.jpg" alt="Image 2" class="box-image">
+                    <div class="box-overlay">
+                        <h3 class="white-text text-darken-4 glow">Richard Trager</h3>
+                        <p>Trager is portrayed as an employee of the Murkoff Corporation, the company behind the disturbing experiments and atrocities conducted at the asylum. At first, he presents himself as friendly and eager to assist the protagonist, Miles Upshur, in navigating the facility.</p>
+                    </div>
+                </div>
+                <div class="box-item">
+                    <img src="img2/thevariants.jpg" alt="Image 2" class="box-image">
+                    <div class="box-overlay">
+                        <h3 class="white-text text-darken-4 glow">The Variant</h3>
+                        <p>The Variants exhibit extreme and disturbing behaviors, displaying signs of severe psychosis, violence, and physical deformities. They roam the asylum's halls, attacking anyone they encounter, including the protagonist, Miles Upshur.</p>
+                        <p class="white-text text-darken-4 ">These Variants are former patients who have undergone horrific experiments and treatments conducted by the Murkoff Corporation, resulting in their mental and physical degradation.</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="box-item">
+                    <img src="img2/nicholastremblay.jpg" alt="Image 2" class="box-image">
+                    <div class="box-overlay">
+                        <h3 class="white-text text-darken-4 glow">Nicholas Tremblay</h3>
+                        <p>Tremblay was a journalist investigating the strange occurrences in the remote region of Temple Gate, Arizona, where the game takes place. He was among several journalists looking into the activities of the secretive cult known as the Testament of the New Ezekiel.</p>
+                        <p>Throughout the game, players can discover notes, recordings, and documents left behind by Tremblay, shedding light on the cult's practices, rituals, and the atrocities they committed. His investigations unravel the disturbing nature of the cult, its fanatical beliefs, and the horrors experienced by the inhabitants of Temple Gate</p>
+                    </div>
+                </div>
+                <div class="box-item">
+                    <img src="img2/marta.jpg" alt="Image 2" class="box-image">
+                    <div class="box-overlay">
+                        <h3 class="white-text text-darken-4 glow">Marta</h3>
+                        <p>Marta is a member of the Testament of the New Ezekiel cult and is portrayed as a devout follower, wielding a large pickaxe-like weapon. She's deeply devoted to the cult's leader, Papa Knoth, and is tasked with enforcing their twisted beliefs and eliminating anyone perceived as a threat to the cult.</p>
+                    </div>
+                </div>
+                <div class="box-item">
+                    <img src="img2/sullivanknoth.jpg" alt="Image 2" class="box-image">
+                    <div class="box-overlay">
+                        <h3 class="white-text text-darken-4 glow">Sullivan Knoth</h3>
+                        <p>Knoth is portrayed as a deeply religious and authoritative figure within the cult, guiding his followers with zealous conviction. He espouses apocalyptic beliefs, claiming to receive divine revelations and visions that dictate the cult's actions and beliefs.</p>
+                        <p>Knoth's character represents the embodiment of religious fanaticism, delusion, and the abuse of power. </p>
+                    </div>
+                </div>
+                <div class="box-item">
+                    <img src="img2/val.jpg" alt="Image 2" class="box-image">
+                    <div class="box-overlay">
+                        <h3 class="white-text text-darken-4 glow">Val</h3>
+                        <p>Val is portrayed as a high-ranking member of the cult, often referred to as "The Scalled" due to an illness that affected her and other followers, causing them to exhibit symptoms of skin lesions and sores. Val is deeply devoted to the cult's leader, Sullivan Knoth, and is involved in the propagation of the cult's apocalyptic beliefs.</p>
+                        <p>Val's character serves as a representation of the fervent devotion and fanaticism present within the cult, contributing to the game's themes of religious extremism and the horrors resulting from extreme belief systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="parallax-container">
+            <div class="parallax">
+          <img src="img2/parallax 2.jpg" alt="" class="responsive-img">
+      </div>
+    </div>
+
+
+    <section class="container section scrollspy" id="gameplay">
+        <div class="row">
+          <div class="col s12">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Q1bT8IwYU-c?si=fH9eJydHS5L-uyVD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XfhVEXygP-U?si=l4AIkbx-okYPRGeY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/mAF5GNNbPaw?si=fgBLCOacd7lCEm1f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      
+<div class="parallax-container">
+    <div class="parallax">
+        <img src="img2/banner.png" alt="Background Image" class="responsive-img">
+    </div>
+</div>
+
+<section class="container section scrollspy" id="about">
+    <div class="row">
+        <div class="col s12 l4 ">
+            <h2 class="white-text text-darken-4 glow" id="aboutHeader">About Red Barrels</h2>
+            <p  class="white-text text-darken-4">Red Barrels is the studio behind the immersive indie horror series Outlast, a series that has terrified more than 15 million players worldwide. Based in Montreal, Red Barrel's mission is to create unforgettable experiences that leave the player's blood running cold.</p>
+            <p class="white-text text-darken-4">Red Barrels Inc. is a Canadian video game developer based in Montreal. The company was founded by Philippe Morin, David Chateauneuf and Hugo Dallaire in 2011. The three were previously developers for Ubisoft Montreal and EA Montreal, but founded the company after the origination of an original intellectual property by Dallaire in 2010. After leaving their respective workplaces, the team's online presence began in July 2012 and a trailer for the game that became Outlast.</p>
+        </div>
+        <div class="col s12 l6 offset-l2">
+            <ul class="tabs">
+                <li class="tab col s6 black">
+                    <a href="#newest" class="white-text text-darken-4 glow">Newest</a>
+                </li>
+                <li class="tab col s6 black">
+                    <a href="#future-projects" class="white-text text-darken-4 glow">Future Projects</a>
+                </li>
+            </ul>
+            <div class="col s12" id="newest">
+                <p class="flow-text white-text text-darken-4 glow">Outlast: Trials</p>
+                <p class="white-text text-darken-4">Outlast, the first major release from Red Barrels, is a first-person survival horror game that follows investigative journalist Miles Upshur as he explores Mount Massive Asylum, uncovering dark secrets and facing unimaginable horrors.</p>
+                <p class="white-text text-darken-4">The game received critical acclaim for its chilling atmosphere, narrative, and innovative use of stealth gameplay in a horror setting. The Outlast Trials is a first-person psychological horror survival video game developed and published by Red Barrels.</p>
+                <p class="white-text text-darken-4">Outlast Trials is the third installment in the Outlast series, serving as a prequel to the first two games and features test subjects in a mysterious Cold War experiment. The game was released on May 18, 2023 via early access for Microsoft Windows. Outlast Trials was announced in December 2017, though no time frame or target platforms were confirmed.[3] During this announcement, Red Barrels said that because they could not easily add downloadable content for Outlast 2 due to its structure, they have a smaller separate project related to Outlast that will release before Outlast Outlast Trials. Red Barrels also described the game as a "TV series". The development team of the game had around 40 people.</p>
+            </div>
+            <div class="col s12" id="future-projects">
+                <p class="flow-text white-text text-darken-4 glow">Future Projects</p>
+                <p class="white-text text-darken-4">Developer Update | October 2023 – New Trial Map & Halloween Event New Content Update Coming Oct. 26
+                    Greeting Reagents! A new update is coming to The Outlast Trials Early Access on Thursday, October 26th that will include a new Trial Map: Courthouse, along with new MK-Challenges and new Weekly Programs! 
+                    <p class="white-text text-darken-4">A limited-time Halloween event: Program Geister will also be available in which you can brave the Trials to obtain exclusive Geister Tokens and purchase Halloween themed Cell and Character Customizations.</p>
+                        <p class="white-text text-darken-4">Note that the October 26th update will mark the end of Program Omega for the time being as Experimental Programs such as Geister and the Weekly Programs are being implemented into Trials.</p>
+            </div>
+        </div>
+</section>
+
+<div class="parallax-container">
+    <div class="parallax">
+        <img src="img2/image.jpeg" alt="Background Image" class="responsive-img">
+    </div>
+</div>
+
+
+<!--FOOTER-->
+
+<footer class="page-footer black darken-3">
+<section class="container " id="outro">
+    <div class="row">
+        <div class="col s12 l4">
+            <h2 class="white-text text-darken-4 glow">Thanks for Visiting!</h2>
+            <p class="white-text text-darken-4">"Thank you for visiting our website! Your presence means a lot to us. We hope you found what you were looking for and enjoyed exploring our offerings.If you have any questions, feedback, or if there's anything specific you'd like to know more about, please don't hesitate to reach out. We're here to assist you and ensure that your experience with us is nothing short of excellent."</p>
+            <p class="white-text text-darken-4 ">"Once again, thank you for choosing Red Barrels. We look forward to the opportunity to serve you, and we hope to see you again soon!</p>
+        </div>
+        <div class="row">
+            <div class="col s12 l5 offset-l2">
+                <form action="">
+                    <div class="input-field">
+                        <i class="material-icons prefix glow">email</i>
+                        <input type="email" id="email" class="validate">
+                        <label for="email" class="white-text">Your Email</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix glow">person</i>
+                        <input type="text" id="username" class="validate">
+                        <label for="username" class="white-text">Username</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix glow">lock</i>
+                        <input type="password" id="password" class="validate">
+                        <label for="password" class="white-text">Password</label>
+                    </div>
+                    <button class="btn waves-effect waves-light glow" type="submit" name="action">Login</button>
+                    <button class="btn waves-effect waves-light glow" type="submit" name="action">Sign Up</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#" ><i class="fab fa-facebook"></i></a>
+                    <a href="#" ><i class="fab fa-instagram"></i></a>
+                    <a href="#" ><i class="fab fa-youtube"></i></a>
+                    <a href="#" ><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Game Credits -->
+            <div class="game-credits">
+                <div class="col s12 l5 offset-l2">
+                    <h3 class="white-text text-darken-4 glow">Game Credits</h3>
+                    <p class="white-text text-darken-4">Game Developed by: Red Barrels</p>
+                    <p class="white-text text-darken-4">Graphics and Design by: Charles Ayotte</p>
+                    <p class="white-text text-darken-4">Music and Sound Effects by: Tom Salta</p>
+                </div>
+            </div>
+        </div>
+    
+    
+</section>
+      
+            
+                    <div class="footer-copyright gallery  black darken-4 " >
+                        <div class="container center-align">&copy; 2023 Red Barrels. All Rights Reserved</div>
+                    </div>
+                </footer>
+            
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.scrollspy').scrollSpy();
+            $('.parallax').parallax();
+            $('.tabs').tabs()
+            
+        });
+    </script>
+</body>
+</html>
